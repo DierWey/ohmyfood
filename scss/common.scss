@@ -1,0 +1,75 @@
+/** General **/
+
+$background: #f3f3f3;
+$background-f: #353535;
+
+
+* { 
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: $background;    
+    /** a modifier debut **/
+    width: 375px;
+    border: solid 1px blue;
+    /** a modifier fin **/
+}
+
+.h1-restaurant {
+    font-family: "Shrikhand", cursive;
+    font-size: 28px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/** Header **/
+
+.header {
+    height: 63px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .header__logo {
+        width: 162px;
+    }
+}
+
+
+
+/** Footer **/
+
+.footer {
+    background-color: $background-f;
+    color: white;
+    padding: 22px 25px 22px 25px;
+    .footer__logo {
+        height: 27px;
+        font-family: "Shrikhand", cursive;
+        font-size: 18px;
+    }
+    .footer__menu {
+        list-style: none;
+        padding: 0;
+        margin-top: 9px;
+        li {
+            height: 20px;
+            padding: 7px 0 0 0;
+            .fa-utensils {
+                font-size: 14px;
+                padding-right: 10px;
+            }
+            .fa-handshake-angle {
+                font-size: 11px;
+                padding-right: 8px;
+            }
+        }
+    }
+}
+
