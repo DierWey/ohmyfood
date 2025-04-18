@@ -1,4 +1,142 @@
-/** Restaurants section3 **/
+$primary: #9356dc;
+$grey: #353535;
+$grey2: #eaeaea;
+$grey4: #7e7e7e;
+
+/** Header **/
+
+.header {
+    display: flex;
+    flex-direction: column;
+    .header__logo {
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.15);
+        z-index: 2;
+    }
+    .header-local {
+        height: 50px;
+        width: 375px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 17px;
+        background-color: $grey2;
+        box-shadow: 0 4px 4px 0 rgb(0 0 0 / 0.25);
+        z-index: 1;
+        .header-local__input {
+            height: 19px;
+            width: 109px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: $grey2;
+            border: 0;
+            padding: 0;
+        }
+    }
+}
+
+/** Presentation section 1 **/
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .present-title {
+        height: 68px;
+        width: 275px;
+        text-align: center;
+        font-size: 24px;
+        margin-top: 39px;
+    }
+    .present-text {
+        height: 46px;
+        width: 315px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
+        color: $grey;
+    }
+    .present-button {
+        height: 50px;
+        width: 218px;
+        border: 0;
+        border-radius: 25px;
+        background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.25);
+        font-size: 16px;
+        color: white;
+        margin: 27px 0 57px 0;
+    }
+} 
+
+
+/** Fonctionnement section 2 **/
+
+.function {
+    height: 440px;
+    background-color: white;
+    .function-title {
+        height: 31px;
+        padding: 48px 0 26px 20px;
+    }
+    .function-organise {
+        display: flex;
+        flex-direction: column;
+        .function-fullbutton {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 0 25px 12px;
+            .function-button {
+                position: relative;
+                height: 72px;
+                width: 322px;
+                border: 0;
+                border-radius: 20px;
+                background-color: #f6f6f6;
+                box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.15);
+                font-size: 16px;
+                font-weight: 500;
+                .fonction-button__texte {
+                    position: absolute;
+                    top: 27px;
+                    left: 73px;
+                    font-size: 16px;
+                }    
+                .number {
+                    display: flex;
+                    position: absolute;
+                    top: 27px;
+                    left: -12px;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 12px;
+                    background-color: $primary;
+                    font-size: 14px;
+                    color: white;
+                    span{
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+                .icon1, .icon2, .icon3 {
+                    position: absolute;
+                    top: 25px;
+                    left: 36px;
+                    font-size: 18px;
+                    color: $grey4;
+                }
+                .icon3 {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+
+/** Restaurants section 3 **/
 
 .image-restau {
     width: 346px;

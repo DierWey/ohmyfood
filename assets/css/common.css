@@ -24,13 +24,16 @@ a {
 
 /** Header **/
 .header {
-  height: 63px;
   background-color: white;
+}
+.header .header__logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 63px;
+  width: 100%;
 }
-.header .header__logo {
+.header .header__logo .header__logo--width {
   width: 162px;
 }
 

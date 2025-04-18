@@ -16,41 +16,49 @@
 <body>
 
     <header class="header">
-        <img class="header__logo" src="assets/images/logo/ohmyfood.png" alt="logo ohmyfood"></a>
+        <div class="header__logo">
+            <img class="header__logo--width" src="assets/images/logo/ohmyfood.png" alt="logo ohmyfood">
+        </div>
+        <form class="header-local" method="post">
+            <label class="header-local__label" for="ville"><i class="fa-solid fa-location-dot"></i></label>
+            <input class="header-local__input" type="search" id="ville" name="ville" placeholder="Paris, Belleville">                
+        </form>
     </header>
 
     <main>
         <section class="presentation">
-            <form method="post">
-                <label for="ville"><i class="fa-solid fa-location-dot"></i></label>
-                <input type="search" id="ville" name="ville" placeholder="Paris, Belleville">                
-            </form>
-            <h1>Réservez le menu qui vous convient</h1>
-            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <button>Explorer nos restaurants</button>
+            <h1 class="present-title">Réservez le menu qui vous convient</h1>
+            <p class="present-text">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+            <button class="present-button">Explorer nos restaurants</button>
         </section>
-        <section class="fonctionnement">
-            <h2>Fonctionnement</h2>
-            <div>
-                <div>
-                    <span>1</span>
-                    <button>
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                        Choisissez un restaurant
+        <section class="function">
+            <h2 class="function-title">Fonctionnement</h2>
+            <div class="function-organise">
+                <div class="function-fullbutton">
+                    <button class="function-button">                       
+                        <p class="fonction-button__texte">Choisissez un restaurant</p>
+                        <div class="number">
+                            <span>1</span>
+                        </div>
+                        <i class="fa-solid fa-mobile-screen-button icon1"></i>
                     </button>
                 </div>
-                <div>
-                    <span>2</span>
-                    <button>
-                        <i class="fa-solid fa-list-ul"></i>
-                        Composez votre menu
+                <div class="function-fullbutton">
+                    <button  class="function-button">
+                        <p class="fonction-button__texte">Composez votre menu</p>
+                        <div class="number">
+                            <span>2</span>
+                        </div>
+                        <i class="fa-solid fa-list-ul icon2"></i>
                     </button>
                 </div>
-                <div>
-                    <span>3</span>
-                    <button>
-                        <i class="fa-solid fa-store"></i>
-                        Dégustez au restaurant
+                <div class="function-fullbutton">
+                    <button class="function-button">
+                        <p class="fonction-button__texte">Dégustez au restaurant</p>
+                        <div class="number">
+                            <span>3</span>
+                        </div>
+                        <i class="fa-solid fa-store icon3"></i>
                     </button>
                 </div>
             </div>

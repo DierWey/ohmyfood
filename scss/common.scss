@@ -2,6 +2,7 @@
 
 $background: #f3f3f3;
 $background-f: #353535;
+$primary: #9356dc;
 
 
 * { 
@@ -31,13 +32,16 @@ a {
 /** Header **/
 
 .header {
-    height: 63px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: white;    
     .header__logo {
-        width: 162px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 63px;
+        width: 100%;
+        .header__logo--width {
+            width: 162px;
+        }
     }
 }
 
