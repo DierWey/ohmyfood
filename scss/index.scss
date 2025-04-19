@@ -8,7 +8,6 @@ $grey4: #7e7e7e;
 .header {
     display: flex;
     flex-direction: column;
-    z-index: 2;
     .header__logo {
         box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.15);
     }
@@ -21,7 +20,6 @@ $grey4: #7e7e7e;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1;
     .header-local {
         height: 50px;
         width: 375px;
