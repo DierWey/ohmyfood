@@ -7,6 +7,9 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
+.header .header__goback {
+  display: none;
+}
 .header .header-local {
   height: 50px;
   width: 375px;
@@ -126,6 +129,60 @@
 }
 
 /** Restaurants section 3 **/
-.image-restau {
-  width: 346px;
+.restaurant {
+  min-width: 375px;
+}
+.restaurant h2 {
+  margin: 54px 0 24px 20px;
+}
+.restaurant .restaurant-allcards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 66px;
+}
+.restaurant .restaurant-allcards .restaurant-card {
+  position: relative;
+  height: 251px;
+  width: 340px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+}
+.restaurant .restaurant-allcards .restaurant-card .restaurant-card-new {
+  height: 29px;
+  width: 80px;
+  border-radius: 2px;
+  background-color: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #008766;
+  position: absolute;
+  top: 13px;
+  left: 248px;
+}
+.restaurant .restaurant-allcards .restaurant-card .image-restau {
+  width: 340px;
+  height: 174px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.restaurant .restaurant-allcards .restaurant-card .restaurant-card-title {
+  font-size: 18px;
+  margin: 11px 0 5px 13px;
+}
+.restaurant .restaurant-allcards .restaurant-card .restaurant-card-text {
+  font-size: 17px;
+  margin-left: 13px;
+}
+.restaurant .restaurant-allcards .restaurant-card .restaurant-card-heart {
+  font-size: 22px;
+  position: absolute;
+  top: 197px;
+  left: 293px;
 }/*# sourceMappingURL=index.css.map */

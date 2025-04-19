@@ -23,9 +23,17 @@ body {
     font-size: 28px;
 }
 
+.h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
 a {
     color: inherit;
     text-decoration: none;
+    a:hover {
+        cursor: pointer;
+    }
 }
 
 
@@ -33,7 +41,7 @@ a {
 
 .header {
     background-color: white;
-    z-index: 2; 
+    position: relative;
     .header__logo {
         display: flex;
         justify-content: center;
@@ -44,13 +52,18 @@ a {
             width: 162px;
         }
     }
-}
-
-
-/** Main **/
-
-main {
-    z-index: 1;
+    .header__goback {
+        width: 30px;
+        height: 30px;
+        display: flex;        
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        color: $background-f;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+    }
 }
 
 
