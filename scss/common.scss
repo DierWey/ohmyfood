@@ -1,9 +1,19 @@
-/** General **/
+/** Variables **/
 
 $background: #f3f3f3;
 $background-f: #353535;
 $primary: #9356dc;
 
+/** Mixins **/
+
+@mixin text-white {
+    font-weight: 500;
+    font-size: 16px;
+    color: White;
+    }
+
+
+/** General **/
 
 * { 
     font-family: "Roboto", sans-serif;
@@ -71,7 +81,7 @@ a {
 
 .footer {
     background-color: $background-f;
-    color: white;
+    @include text-white;
     padding: 22px 25px 22px 25px;
     .footer__logo {
         height: 27px;

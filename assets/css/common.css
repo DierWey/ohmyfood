@@ -1,3 +1,5 @@
+/** Variables **/
+/** Mixins **/
 /** General **/
 * {
   font-family: "Roboto", sans-serif;
@@ -61,7 +63,9 @@ a a:hover {
 /** Footer **/
 .footer {
   background-color: #353535;
-  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  color: White;
   padding: 22px 25px 22px 25px;
 }
 .footer .footer__logo {

@@ -1,7 +1,35 @@
+@import 'common';
+
+/** Variables **/
 $primary: #9356dc;
 $grey: #353535;
 $grey2: #eaeaea;
 $grey4: #7e7e7e;
+
+/** Mixins **/
+
+/** @mixin text-white {
+    font-weight: 500;
+    font-size: 16px;
+    color: White;
+    } **/
+
+@mixin index-h1h2 {
+    font-weight: 700;
+    font-size: 24px;
+    color: Black;
+    }
+
+@mixin button-pink {
+    height: 50px;
+    border: 0;
+    border-radius: 25px;
+    @include text-white;
+    background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.25);
+}
+
+
 
 /** Header **/
 
@@ -48,7 +76,7 @@ $grey4: #7e7e7e;
         height: 68px;
         width: 275px;
         text-align: center;
-        font-size: 24px;
+        @include index-h1h2;
         margin-top: 39px;
     }
     .present-text {
@@ -60,14 +88,8 @@ $grey4: #7e7e7e;
         color: $grey;
     }
     .present-button {
-        height: 50px;
+        @include button-pink;
         width: 218px;
-        border: 0;
-        border-radius: 25px;
-        background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
-        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.25);
-        font-size: 16px;
-        color: white;
         margin: 27px 0 57px 0;
     }
 } 
@@ -80,6 +102,7 @@ $grey4: #7e7e7e;
     background-color: white;
     .function-title {
         height: 31px;
+        @include index-h1h2;
         padding: 48px 0 26px 20px;
     }
     .function-organise {
@@ -143,6 +166,7 @@ $grey4: #7e7e7e;
 .restaurant {
     min-width: 375px;
     h2 {
+        @include index-h1h2;
         margin: 54px 0 24px 20px;
     }
     .restaurant-allcards {
