@@ -201,8 +201,12 @@ $grey4: #7e7e7e;
                 width: 340px;
                 height: 174px;
                 object-fit: cover;
+                object-position: bottom;
                 border-radius: 15px 15px 0 0;
             }
+            #img-restau2 {
+                object-position: 50% 61%;
+              }
             .restaurant-card-title {
                 font-size: 18px;
                 margin: 11px 0 5px 13px;

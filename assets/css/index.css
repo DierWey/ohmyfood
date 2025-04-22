@@ -279,7 +279,13 @@ a a:hover {
   height: 174px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
   border-radius: 15px 15px 0 0;
+}
+.restaurant .restaurant-allcards .restaurant-card #img-restau2 {
+  -o-object-position: 50% 61%;
+     object-position: 50% 61%;
 }
 .restaurant .restaurant-allcards .restaurant-card .restaurant-card-title {
   font-size: 18px;
