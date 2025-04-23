@@ -5,30 +5,24 @@ $primary: #9356dc;
 $grey: #353535;
 $grey2: #eaeaea;
 $grey4: #7e7e7e;
+$bg-button: linear-gradient(to top, #9356DC, #FF79DA);
 
 /** Mixins **/
-
-/** @mixin text-white {
-    font-weight: 500;
-    font-size: 16px;
-    color: White;
-    } **/
 
 @mixin index-h1h2 {
     font-weight: 700;
     font-size: 24px;
     color: Black;
-    }
+}
 
 @mixin button-pink {
     height: 50px;
     border: 0;
     border-radius: 25px;
     @include text-white;
-    background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+    background: $bg-button;
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.25);
 }
-
 
 
 /** Header **/
@@ -71,7 +65,8 @@ $grey4: #7e7e7e;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    position: relative;    
     .present-title {
         height: 68px;
         width: 275px;
@@ -87,10 +82,16 @@ $grey4: #7e7e7e;
         font-weight: 300;
         color: $grey;
     }
-    .present-button {
+    .present__button {
         @include button-pink;
         width: 218px;
         margin: 27px 0 57px 0;
+        opacity: 1;
+        transition: all 300ms ease-in-out;
+        &:hover {
+            opacity: 0.85;
+            box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.35);            
+        }
     }
 } 
 
@@ -215,12 +216,23 @@ $grey4: #7e7e7e;
                 font-size: 17px;
                 margin-left: 13px;
             }
-            .restaurant-card-heart {
+            .icon-heart, .icon-fullheart {
                 font-size: 22px;
                 position: absolute;
                 top: 197px;
                 left: 293px;
             }
+            .icon-fullheart {
+                background: linear-gradient(to top, #FF79DA, #9356DC);
+                background-clip: text;
+                color: transparent;
+                opacity: 0;
+                transition: opacity 500ms ease-in-out;
+                &:hover{
+                opacity: 1;
+                }
+            }
+            
         }
     }
 }
