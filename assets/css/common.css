@@ -7,11 +7,8 @@
 }
 
 body {
-  background-color: #f3f3f3;
-  /** a modifier debut **/
-  width: 375px;
-  border: solid 1px blue;
-  /** a modifier fin **/
+  display: flex;
+  justify-content: center;
 }
 
 .h1-restaurant {
@@ -37,27 +34,27 @@ a a:hover {
   background-color: white;
   position: relative;
 }
-.header .header__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header__logo {
   height: 63px;
   width: 100%;
 }
-.header .header__logo .header__logo--width {
+.header__logo--width {
   width: 162px;
+  padding-top: 10px;
 }
-.header .header__goback {
+.header__goback {
   width: 30px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 18px;
   color: #353535;
   position: absolute;
   top: 16px;
   left: 16px;
+}
+.header .header__logo, .header .header__goback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /** Footer **/

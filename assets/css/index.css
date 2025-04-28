@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** Variables **/
 /** Mixins **/
 /** General **/
@@ -7,11 +8,8 @@
 }
 
 body {
-  background-color: #f3f3f3;
-  /** a modifier debut **/
-  width: 375px;
-  border: solid 1px blue;
-  /** a modifier fin **/
+  display: flex;
+  justify-content: center;
 }
 
 .h1-restaurant {
@@ -37,27 +35,27 @@ a a:hover {
   background-color: white;
   position: relative;
 }
-.header .header__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header__logo {
   height: 63px;
   width: 100%;
 }
-.header .header__logo .header__logo--width {
+.header__logo--width {
   width: 162px;
+  padding-top: 10px;
 }
-.header .header__goback {
+.header__goback {
   width: 30px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 18px;
   color: #353535;
   position: absolute;
   top: 16px;
   left: 16px;
+}
+.header .header__logo, .header .header__goback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /** Footer **/
@@ -91,14 +89,20 @@ a a:hover {
   padding-right: 8px;
 }
 
-/** Variables **/
 /** Mixins **/
+/** General **/
+.body__container {
+  background-color: #f6f6f6;
+  width: 375px;
+  box-sizing: content-box;
+}
+
 /** Header **/
 .header {
   display: flex;
   flex-direction: column;
 }
-.header .header__logo {
+.header__logo {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
@@ -107,7 +111,6 @@ a a:hover {
 }
 .header .header-local {
   height: 50px;
-  width: 375px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +119,7 @@ a a:hover {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
-.header .header-local .header-local__input {
+.header .header-local__input {
   height: 19px;
   width: 109px;
   font-size: 16px;
@@ -127,14 +130,19 @@ a a:hover {
 }
 
 /** Presentation section 1 **/
-.presentation {
+* {
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.present {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  flex-direction: column;
 }
-.presentation .present-title {
+.present .present-title {
   height: 68px;
   width: 275px;
   text-align: center;
@@ -143,7 +151,7 @@ a a:hover {
   color: Black;
   margin-top: 39px;
 }
-.presentation .present-text {
+.present .present-text {
   height: 46px;
   width: 315px;
   text-align: center;
@@ -151,7 +159,7 @@ a a:hover {
   font-weight: 300;
   color: #353535;
 }
-.presentation .present__button {
+.present .present__button {
   height: 50px;
   border: 0;
   border-radius: 25px;
@@ -161,18 +169,18 @@ a a:hover {
   background: linear-gradient(to top, #9356DC, #FF79DA);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
   width: 218px;
-  margin: 27px 0 57px 0;
+  margin: 27px 0 0 0;
   opacity: 1;
   transition: all 300ms ease-in-out;
 }
-.presentation .present__button:hover {
+.present .present__button:hover {
   opacity: 0.85;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.41);
 }
 
 /** Fonctionnement section 2 **/
 .function {
-  height: 440px;
+  max-height: 440px;
   background-color: white;
 }
 .function .function-title {
@@ -180,19 +188,20 @@ a a:hover {
   font-weight: 700;
   font-size: 24px;
   color: Black;
-  padding: 48px 0 26px 20px;
+  padding: 48px 0 1px 0px;
 }
 .function .function-organise {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  padding-bottom: 43px;
 }
 .function .function-organise .function-fullbutton {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   padding: 0 0 25px 12px;
 }
-.function .function-organise .function-fullbutton .function-button {
+.function .function-organise .function-fullbutton button {
   position: relative;
   height: 72px;
   width: 322px;
@@ -203,13 +212,13 @@ a a:hover {
   font-size: 16px;
   font-weight: 500;
 }
-.function .function-organise .function-fullbutton .function-button .fonction-button__texte {
+.function .function-organise .function-fullbutton button .fonction-button__texte {
   position: absolute;
   top: 27px;
   left: 73px;
   font-size: 16px;
 }
-.function .function-organise .function-fullbutton .function-button .number {
+.function .function-organise .function-fullbutton button .number {
   display: flex;
   position: absolute;
   top: 27px;
@@ -221,39 +230,38 @@ a a:hover {
   font-size: 14px;
   color: white;
 }
-.function .function-organise .function-fullbutton .function-button .number span {
+.function .function-organise .function-fullbutton button .number span {
   margin: auto;
   text-align: center;
 }
-.function .function-organise .function-fullbutton .function-button .icon1, .function .function-organise .function-fullbutton .function-button .icon2, .function .function-organise .function-fullbutton .function-button .icon3 {
+.function .function-organise .function-fullbutton button .icon1, .function .function-organise .function-fullbutton button .icon2, .function .function-organise .function-fullbutton button .icon3 {
   position: absolute;
   top: 25px;
   left: 36px;
   font-size: 18px;
   color: #7e7e7e;
 }
-.function .function-organise .function-fullbutton .function-button .icon3 {
+.function .function-organise .function-fullbutton button .icon3 {
   color: #9356dc;
 }
 
 /** Restaurants section 3 **/
-.restaurant {
-  min-width: 375px;
-}
-.restaurant h2 {
+h2 {
   font-weight: 700;
   font-size: 24px;
   color: Black;
   margin: 54px 0 24px 20px;
+  padding-left: 3px;
 }
-.restaurant .restaurant-allcards {
+
+.restaurant-allcards {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 17px;
   gap: 18px;
   margin-bottom: 66px;
 }
-.restaurant .restaurant-allcards .restaurant-card {
+.restaurant-allcards .restaurant-card {
   position: relative;
   height: 251px;
   width: 340px;
@@ -261,7 +269,7 @@ a a:hover {
   background-color: white;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
 }
-.restaurant .restaurant-allcards .restaurant-card .restaurant-card-new {
+.restaurant-allcards .restaurant-card .restaurant-card-new {
   height: 29px;
   width: 80px;
   border-radius: 2px;
@@ -274,9 +282,9 @@ a a:hover {
   color: #008766;
   position: absolute;
   top: 13px;
-  left: 248px;
+  right: 14px;
 }
-.restaurant .restaurant-allcards .restaurant-card .image-restau {
+.restaurant-allcards .restaurant-card .image-restau {
   width: 340px;
   height: 174px;
   -o-object-fit: cover;
@@ -285,25 +293,25 @@ a a:hover {
      object-position: bottom;
   border-radius: 15px 15px 0 0;
 }
-.restaurant .restaurant-allcards .restaurant-card #img-restau2 {
+.restaurant-allcards .restaurant-card #img-restau2 {
   -o-object-position: 50% 61%;
      object-position: 50% 61%;
 }
-.restaurant .restaurant-allcards .restaurant-card .restaurant-card-title {
+.restaurant-allcards .restaurant-card .restaurant-card-title {
   font-size: 18px;
   margin: 11px 0 5px 13px;
 }
-.restaurant .restaurant-allcards .restaurant-card .restaurant-card-text {
+.restaurant-allcards .restaurant-card .restaurant-card-text {
   font-size: 17px;
   margin-left: 13px;
 }
-.restaurant .restaurant-allcards .restaurant-card .icon-heart, .restaurant .restaurant-allcards .restaurant-card .icon-fullheart {
+.restaurant-allcards .restaurant-card .icon-heart, .restaurant-allcards .restaurant-card .icon-fullheart {
   font-size: 22px;
   position: absolute;
   top: 197px;
   left: 293px;
 }
-.restaurant .restaurant-allcards .restaurant-card .icon-fullheart {
+.restaurant-allcards .restaurant-card .icon-fullheart {
   background: linear-gradient(to top, #FF79DA, #9356DC);
   -webkit-background-clip: text;
           background-clip: text;
@@ -311,6 +319,149 @@ a a:hover {
   opacity: 0;
   transition: opacity 500ms ease-in-out;
 }
-.restaurant .restaurant-allcards .restaurant-card .icon-fullheart:hover {
+.restaurant-allcards .restaurant-card .icon-fullheart:hover {
   opacity: 1;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+/****** Media queries ***********/
+/* Desktop, equal/more than 1440px) */
+@media (min-width: 1440px) {
+  .body__container {
+    width: 1440px;
+  }
+  .header {
+    box-shadow: none;
+  }
+  .header .header__logo {
+    height: 96px;
+    box-shadow: none;
+  }
+  .header .header__logo--width {
+    width: 200px;
+    padding-top: 0;
+  }
+  .header .header-local {
+    box-shadow: none;
+  }
+  .presentation {
+    display: flex;
+    justify-content: center;
+  }
+  .presentation .present {
+    width: 645px;
+    height: 179px;
+    padding: 30px 0;
+  }
+  .presentation .present-title {
+    height: 47px;
+    width: 645px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0px;
+  }
+  .presentation .present .present-text {
+    height: 26px;
+    width: 531px;
+    margin: 28px 0;
+  }
+  .presentation .present .present-a {
+    border: 0;
+  }
+  .presentation .present .present-a .present__button {
+    margin: 0;
+    padding: 0;
+  }
+  .function {
+    padding: 50px 180px 7px 180px;
+  }
+  .function > div {
+    padding: 0;
+    margin: 0;
+  }
+  .function > div .function-title {
+    padding: 0;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .function > div .function-organise {
+    flex-direction: row;
+    gap: 24px;
+    margin-left: 0;
+    padding-bottom: 43px;
+  }
+  .function > div .function-organise .function-fullbutton {
+    padding: 0 0 1px 12px;
+  }
+  .restaurant {
+    padding: 28px 180px 28px 180px;
+  }
+  .restaurant > div {
+    margin: 0;
+    padding: 0;
+  }
+  .restaurant > div h2 {
+    padding: 0;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .restaurant > div .restaurant-allcards {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-bottom: 0;
+    gap: 50px;
+    max-width: 1080px;
+  }
+  .restaurant > div .restaurant-allcards .restaurant-card {
+    width: 490px;
+  }
+  .restaurant > div .restaurant-allcards .restaurant-card .restaurant-card-new {
+    right: 17px;
+  }
+  .restaurant > div .restaurant-allcards .restaurant-card .image-restau {
+    width: 490px;
+  }
+  .restaurant > div .restaurant-allcards .restaurant-card .icon-heart, .restaurant > div .restaurant-allcards .restaurant-card .icon-fullheart {
+    left: 443px;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    padding: 57px 25px 30px 25px;
+    margin: 0;
+    gap: 16px;
+  }
+  .footer .footer__logo {
+    height: 27px;
+    width: 139px;
+    margin: 0;
+    padding: 0;
+  }
+  .footer .footer__menu {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer .footer__menu > li {
+    height: 20px;
+    width: 190px;
+    padding: 0;
+  }
+  .footer .footer__menu > li .fa-utensils {
+    font-size: 14px;
+    padding-right: 10px;
+  }
+  .footer .footer__menu > li .fa-handshake-angle {
+    font-size: 11px;
+    padding-right: 8px;
+  }
+  .footer .footer__menu .li-width {
+    width: 130px;
+  }
 }/*# sourceMappingURL=index.css.map */
