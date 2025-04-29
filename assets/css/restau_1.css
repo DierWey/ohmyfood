@@ -111,20 +111,25 @@ main {
 }
 main > img {
   width: 100%;
+  height: 275px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
   margin: 0;
   position: relative;
 }
-main .roundHat {
-  width: 375px;
-  height: 32px;
-  border-radius: 32px 32px 0 0;
+main .roundHat, main .mainBg {
   background-color: #f6f6f6;
+  width: 375px;
+}
+main .roundHat {
+  height: 58px;
+  border-radius: 40px 40px 0 0;
   position: absolute;
-  top: 285px;
+  top: 283px;
 }
 main .mainBg {
-  background-color: #f6f6f6;
-  width: 375px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,13 +141,16 @@ main .mainBg {
 /** Titre **/
 .h1Block {
   position: relative;
-  border: solid 1px green;
   width: 341px;
+}
+.h1Block > h1 {
+  position: absolute;
+  top: -30px;
 }
 .h1Block .icon-heart, .h1Block .icon-fullheart {
   font-size: 22px;
   position: absolute;
-  top: 9px;
+  top: -21px;
   right: 25px;
 }
 .h1Block .icon-fullheart {
@@ -162,7 +170,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border: solid 1px blue;
 }
 
 .h2Block {
@@ -200,10 +207,14 @@ section {
   gap: 5px;
   border: solid 1px green;
 }
+.card .cardInfos h3, .card .cardInfos .comment {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .card .cardInfos h3 {
   font-size: 18px;
   font-weight: 500;
-  width: 287px;
 }
 .card .cardInfos .comment {
   font-size: 15px;
@@ -237,4 +248,6 @@ section {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.41);
 }
 
-/** footer **//*# sourceMappingURL=restau_1.css.map */
+/* Le code ci-dessous correspond à la version responsive uniquement */
+/****** Media queries ***********/
+/* Desktop, equal/more than 1440px) *//*# sourceMappingURL=restau_1.css.map */

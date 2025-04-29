@@ -224,14 +224,7 @@ h2 {
             left: 293px;
         }
         .icon-fullheart {
-            background: linear-gradient(to top, #FF79DA, #9356DC);
-            background-clip: text;
-            color: transparent;
-            opacity: 0;
-            transition: opacity 500ms ease-in-out;
-            &:hover{
-            opacity: 1;
-            }
+            @include like;
         }
         
     }
