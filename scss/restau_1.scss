@@ -30,23 +30,27 @@ main {
         margin: 0;
         position: relative;
     }
+}
+
     .roundHat, .mainBg {
         background-color: $background;
         width: 375px;
     }
+
     .roundHat {        
         height: 58px;
         border-radius: 40px 40px 0 0;
         position: absolute;
         top: 283px;
     }
+
     .mainBg {
         @include display-center;
         flex-direction: column;
         gap: 40px;
         margin: 0;
     }
-}
+
 
 
 
@@ -71,7 +75,7 @@ main {
 }
 
 
-/** Section 1 Entrées **/
+/** Sections **/
 
 section {
     display: flex;
@@ -102,16 +106,18 @@ section {
     box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.1);
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 5px;
+    overflow: hidden;
     .cardInfos {
         height: 42px;
         width: 287px;
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        border: solid 1px green;
+        justify-content: space-between;
+        margin-left: 15px;
+        gap: 1px;
         h3, .comment {
             @include text-overflow;
         }
@@ -123,15 +129,58 @@ section {
             font-size: 15px;
             font-weight: 300;
         }
-    }
+    }  
+}
+
+.cardOrder {
+    display: flex;
+    flex-direction: row;
+    width: 30px;
+    gap: 15px;
     .price {
         width: 27px;
         height: 18px;
         font-size: 15px;
-        border: solid 1px green;
-        padding-top: 28px;
+        font-weight: 700;
+        margin: 37px 0 0 3px;
+    }
+    .greenCheck {
+        width: 59px;
+        height: 69px;
+        border-radius: 0 15px 15px 0;
+        background-color: $green;
+        & > i {
+            font-size: 20px;
+            color: white;
+            padding: 24px 19px;
+        }
     }
 }
+
+
+/** animation greenCheck avec width et overflow **/
+
+.cardInfos {
+    transition: width 300ms ease;
+}
+
+.cardOrder {
+    transition: overflow 300ms ease;
+}
+
+.card:hover {    
+    .cardInfos {
+        width: 228px;
+    }
+    .card {
+        overflow: visible;
+    } 
+}
+
+/** fin anim **/
+
+
+/** Button **/
 
 .button_order {
 @include button_anim;
@@ -148,9 +197,125 @@ margin-bottom: 40px;
 
 @media (min-width: 1440px) {
 
+    .body__container {
+        width: 1440px;
+    }
+
+    .header {
+        box-shadow: none;
+        &__goback {
+            top: 33px;
+            left: 17px;
+        }
+        .header__logo {
+            height: 96px;
+            box-shadow: none;
+            &--width {
+                width: 200px;
+                padding-top: 0;
+            }
+        }
+    }
+
+    main > img {
+        width: 1440px;
+        height: 383px;
+        object-position: 50% -332px;
+    }
 
 
+    main {
+        width: 1440px;
+    }
+
+    .roundHat {        
+        height: 45px;
+        width: 1055px;
+        top: 439px;
+    }
+
+    .mainBlock {
+        width: 100%;
+        background-color: white;
+        @include display-center;
+        flex-direction: column;  
+    }
+
+    .mainBg {
+        width: 1055px;
+    }
 
 
-    
+    .h1Block {
+        position: relative;
+        width: 307px;
+        height: 41px;
+        margin-bottom: 5px;
+        & > h1 {
+            top: 8px;
+            left: 0px;
+        }
+        .icon-heart, .icon-fullheart {
+            top: 17px;
+            right: 0px;
+        }
+    }
+
+
+    .card {
+        width: 634px;
+        .cardInfos {
+            width: 572px;
+        }
+    }
+
+    /* modif animation greenCheck & width */ 
+
+    .card:hover {    
+        .cardInfos {
+            width: 513px;
+        }
+    }
+
+    /* fin modifs */
+
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        padding: 57px 25px 30px 25px;
+        margin: 0;
+        gap: 16px;
+        .footer__logo {
+            height: 27px;
+            width: 139px;
+            margin: 0;
+            padding: 0;
+        }
+        .footer__menu {
+            display: flex;
+            flex-direction: row;
+            gap: 7px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            & > li {
+                height: 20px;
+                width: 190px;
+                padding: 0;
+                .fa-utensils {
+                    font-size: 14px;
+                    padding-right: 10px;
+                }
+                .fa-handshake-angle {
+                    font-size: 11px;
+                    padding-right: 8px;
+                }
+            }
+            .li-width {
+                width: 130px;
+            }
+        }
+    }
+
 }

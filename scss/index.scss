@@ -117,7 +117,7 @@
             display: flex;
             justify-content: center;
             padding: 0 0 25px 12px;
-            & button {
+            .function-button {
                 position: relative;
                 height: 72px;
                 width: 322px;
@@ -278,15 +278,15 @@ h2 {
                 width: 531px;
                 margin: 28px 0;
             }
-            .present-a {
-                border: 0;
-                .present__button {
-                    margin: 0;
-                    padding: 0;
-                }
+            .present__button {
+                margin: 0;
+                padding: 0;
             }
         }
     }    
+
+ 
+
 
     .function {
         padding: 50px 180px 7px 180px;
