@@ -290,13 +290,23 @@ h2 {
   height: 174px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: bottom;
-     object-position: bottom;
   border-radius: 15px 15px 0 0;
 }
+.restaurant-allcards .restaurant-card #img-restau1 {
+  -o-object-position: 50% 65%;
+     object-position: 50% 65%;
+}
 .restaurant-allcards .restaurant-card #img-restau2 {
-  -o-object-position: 50% 61%;
-     object-position: 50% 61%;
+  -o-object-position: 50% 56%;
+     object-position: 50% 56%;
+}
+.restaurant-allcards .restaurant-card #img-restau3 {
+  -o-object-position: 50% 68%;
+     object-position: 50% 68%;
+}
+.restaurant-allcards .restaurant-card #img-restau4 {
+  -o-object-position: 50% 66%;
+     object-position: 50% 66%;
 }
 .restaurant-allcards .restaurant-card .restaurant-card-title {
   font-size: 18px;

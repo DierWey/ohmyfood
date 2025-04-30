@@ -105,21 +105,21 @@ section {
     border-radius: 15px;
     box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.1);
     display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    gap: 5px;
+    gap: 10px;
     overflow: hidden;
     .cardInfos {
-        height: 42px;
-        width: 287px;
+        height: 60px;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        flex: 1;
+        min-width: 0;
         margin-left: 15px;
         gap: 1px;
         h3, .comment {
             @include text-overflow;
+            height: 20px;
+            padding-top: 10px;
         }
         h3 {
             font-size: 18px;
@@ -132,17 +132,12 @@ section {
     }  
 }
 
-.cardOrder {
-    display: flex;
-    flex-direction: row;
-    width: 30px;
-    gap: 15px;
     .price {
         width: 27px;
         height: 18px;
         font-size: 15px;
         font-weight: 700;
-        margin: 37px 0 0 3px;
+        margin: 37px 1px 0 3px;
     }
     .greenCheck {
         width: 59px;
@@ -154,30 +149,21 @@ section {
             color: white;
             padding: 24px 19px;
         }
+        margin-right: -59px;
     }
+
+
+
+/** transition greenCheck avec margin-right **/
+.greenCheck {
+    transition: margin-right 300ms ease;
 }
-
-
-/** animation greenCheck avec width et overflow **/
-
-.cardInfos {
-    transition: width 300ms ease;
-}
-
-.cardOrder {
-    transition: overflow 300ms ease;
-}
-
 .card:hover {    
-    .cardInfos {
-        width: 228px;
+    .greenCheck {
+        margin-right: 0;
     }
-    .card {
-        overflow: visible;
-    } 
 }
-
-/** fin anim **/
+/** fin transition **/
 
 
 /** Button **/
@@ -195,7 +181,7 @@ margin-bottom: 40px;
 /****** Media queries ***********/
 /* Desktop, equal/more than 1440px) */
 
-@media (min-width: 1440px) {
+@media (min-width: 765px) {
 
     .body__container {
         width: 1440px;
@@ -261,23 +247,9 @@ margin-bottom: 40px;
         }
     }
 
-
     .card {
         width: 634px;
-        .cardInfos {
-            width: 572px;
-        }
     }
-
-    /* modif animation greenCheck & width */ 
-
-    .card:hover {    
-        .cardInfos {
-            width: 513px;
-        }
-    }
-
-    /* fin modifs */
 
     .footer {
         display: flex;

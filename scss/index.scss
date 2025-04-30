@@ -203,11 +203,19 @@ h2 {
             width: 340px;
             height: 174px;
             object-fit: cover;
-            object-position: bottom;
             border-radius: 15px 15px 0 0;
         }
+        #img-restau1 {
+            object-position: 50% 65%;
+            }
         #img-restau2 {
-            object-position: 50% 61%;
+            object-position: 50% 56%;
+            }
+        #img-restau3 {
+            object-position: 50% 68%;
+            }
+        #img-restau4 {
+            object-position: 50% 66%;
             }
         .restaurant-card-title {
             font-size: 18px;
