@@ -5,7 +5,7 @@
 
 .body__container {
     background-color: $background;
-    width: 375px;
+    width: 100%;
     box-sizing: content-box;
 }
 
@@ -24,34 +24,30 @@ main {
     padding: 0;
     & > img {
         width: 100%;
-        height: 275px;        
+        height: 260px;        
         object-fit: cover;
-        object-position: bottom;
-        margin: 0;
-        position: relative;
+        object-position: center 62%;
+        position: static;
     }
-}
-
-    .roundHat, .mainBg {
-        background-color: $background;
-        width: 375px;
-    }
-
-    .roundHat {        
-        height: 58px;
-        border-radius: 40px 40px 0 0;
-        position: absolute;
-        top: 283px;
-    }
-
-    .mainBg {
+    .mainBlock {
+        width: 100%;
+        background-color: white;
         @include display-center;
         flex-direction: column;
-        gap: 40px;
-        margin: 0;
+        margin-top: -45px;        
+        .mainBg {
+            background-color: $background;
+            width: 100%;
+            min-width: 375px;
+            @include display-center;
+            flex-direction: column;
+            gap: 40px;
+            margin: 0;
+            border-radius: 40px 40px 0 0;
+            padding-top: 60px;
+        } 
     }
-
-
+}
 
 
 /** Titre **/
@@ -61,12 +57,12 @@ main {
     width: 341px;
     & > h1 {
         position: absolute;
-        top: -30px;
+        top: -27px;
     }
     .icon-heart, .icon-fullheart {
         font-size: 22px;
         position: absolute;
-        top: -21px;
+        top: -19px;
         right: 25px;
     }
     .icon-fullheart {
@@ -81,6 +77,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 60%;
+    min-width: 349px;
 }
 
 .h2Block {
@@ -100,7 +98,6 @@ section {
 }
 
 .card {
-    width: 349px;
     height: 69px;
     border-radius: 15px;
     box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.1);
@@ -132,26 +129,25 @@ section {
     }  
 }
 
-    .price {
-        width: 27px;
-        height: 18px;
-        font-size: 15px;
-        font-weight: 700;
-        margin: 37px 1px 0 3px;
+.price {
+    width: 27px;
+    height: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 37px 1px 0 3px;
+}
+.greenCheck {
+    width: 59px;
+    height: 69px;
+    border-radius: 0 15px 15px 0;
+    background-color: $green;
+    & > i {
+        font-size: 20px;
+        color: white;
+        padding: 24px 19px;
     }
-    .greenCheck {
-        width: 59px;
-        height: 69px;
-        border-radius: 0 15px 15px 0;
-        background-color: $green;
-        & > i {
-            font-size: 20px;
-            color: white;
-            padding: 24px 19px;
-        }
-        margin-right: -59px;
-    }
-
+    margin-right: -59px;
+}
 
 
 /** transition greenCheck avec margin-right **/
@@ -176,16 +172,16 @@ margin-bottom: 40px;
 }
 
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
 
-/****** Media queries ***********/
-/* Desktop, equal/more than 1440px) */
 
-@media (min-width: 765px) {
 
-    .body__container {
-        width: 1440px;
-    }
+/************************************/
+/****** Media queries ***************/
+/* Desktop, equal/more than 1024px) */
+
+    /** header **/
+
+@media (min-width: 1024px) {
 
     .header {
         box-shadow: none;
@@ -203,89 +199,80 @@ margin-bottom: 40px;
         }
     }
 
+    /** main **/
+
     main > img {
-        width: 1440px;
         height: 383px;
-        object-position: 50% -332px;
+        object-position: 50% 58%;
     }
-
-
-    main {
-        width: 1440px;
-    }
-
-    .roundHat {        
-        height: 45px;
-        width: 1055px;
-        top: 439px;
-    }
-
     .mainBlock {
-        width: 100%;
-        background-color: white;
-        @include display-center;
-        flex-direction: column;  
+        margin-top: 0px;
+        .mainBg {
+            max-width: 1055px;            
+            padding-top: 0px;
+        }
     }
-
-    .mainBg {
-        width: 1055px;
-    }
-
 
     .h1Block {
         position: relative;
         width: 307px;
-        height: 41px;
-        margin-bottom: 5px;
+        height: 31px;
+
+        margin-bottom: 0px;
+
         & > h1 {
-            top: 8px;
+            top: -9px;
             left: 0px;
         }
         .icon-heart, .icon-fullheart {
-            top: 17px;
+            top: 0px;
             right: 0px;
         }
     }
 
-    .card {
-        width: 634px;
-    }
 
-    .footer {
+    /* footer */
+
+    footer {
         display: flex;
-        flex-direction: row-reverse;
-        align-items: flex-end;
-        padding: 57px 25px 30px 25px;
-        margin: 0;
-        gap: 16px;
-        .footer__logo {
-            height: 27px;
-            width: 139px;
-            margin: 0;
-            padding: 0;
-        }
-        .footer__menu {
+        justify-content: end;
+        .footer {
+            width: 100%;
             display: flex;
-            flex-direction: row;
-            gap: 7px;
-            list-style: none;
-            padding: 0;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+            padding: 57px 25px 30px 25px;
             margin: 0;
-            & > li {
-                height: 20px;
-                width: 190px;
+            gap: 16px;
+            .footer__logo {
+                height: 27px;
+                width: 139px;
+                margin: 0;
                 padding: 0;
-                .fa-utensils {
-                    font-size: 14px;
-                    padding-right: 10px;
-                }
-                .fa-handshake-angle {
-                    font-size: 11px;
-                    padding-right: 8px;
-                }
             }
-            .li-width {
-                width: 130px;
+            .footer__menu {
+                display: flex;
+                flex-direction: row;
+                gap: 7px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                & > li {
+                    height: 20px;
+                    width: 190px;
+                    padding: 0;
+                    .fa-utensils {
+                        font-size: 14px;
+                        padding-right: 10px;
+                    }
+                    .fa-handshake-angle {
+                        font-size: 11px;
+                        padding-right: 8px;
+                    }
+                }
+                .li-width {
+                    width: 130px;
+                }
             }
         }
     }

@@ -34,6 +34,7 @@ a a:hover {
 .header {
   background-color: white;
   position: relative;
+  width: 100%;
 }
 .header__logo {
   height: 63px;
@@ -59,32 +60,44 @@ a a:hover {
 }
 
 /** Footer **/
-.footer {
+footer {
+  width: 100%;
   background-color: #353535;
   font-weight: 500;
   font-size: 16px;
   color: White;
-  padding: 22px 25px 22px 25px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.footer .footer__logo {
+footer .footer {
+  width: 60%;
+  min-width: 349px;
+}
+footer .footer__logo, footer .footer__menu {
+  margin: 0 12px;
+}
+footer .footer .footer__logo {
   height: 27px;
   font-family: "Shrikhand", cursive;
   font-size: 18px;
+  font-weight: 400;
 }
-.footer .footer__menu {
+footer .footer .footer__menu {
   list-style: none;
   padding: 0;
   margin-top: 9px;
 }
-.footer .footer__menu li {
+footer .footer .footer__menu li {
   height: 20px;
   padding: 7px 0 0 0;
 }
-.footer .footer__menu li .fa-utensils {
+footer .footer .footer__menu li .fa-utensils {
   font-size: 14px;
   padding-right: 10px;
 }
-.footer .footer__menu li .fa-handshake-angle {
+footer .footer .footer__menu li .fa-handshake-angle {
   font-size: 11px;
   padding-right: 8px;
 }/*# sourceMappingURL=common.css.map */

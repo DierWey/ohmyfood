@@ -95,6 +95,7 @@ a {
 .header {
     background-color: white;
     position: relative;
+    width: 100%;
     &__logo {
         height: 63px;
         width: 100%;
@@ -120,29 +121,39 @@ a {
 
 /** Footer **/
 
-.footer {
+footer {
+    width: 100%;
     background-color: $grey;
     @include text-white;
-    padding: 22px 25px 22px 25px;
-    .footer__logo {
-        height: 27px;
-        font-family: "Shrikhand", cursive;
-        font-size: 18px;
-    }
-    .footer__menu {
-        list-style: none;
-        padding: 0;
-        margin-top: 9px;
-        li {
-            height: 20px;
-            padding: 7px 0 0 0;
-            .fa-utensils {
-                font-size: 14px;
-                padding-right: 10px;
-            }
-            .fa-handshake-angle {
-                font-size: 11px;
-                padding-right: 8px;
+    padding: 22px 0;
+    @include display-center;
+    .footer {
+        width: 60%;
+        min-width: 349px;
+        &__logo, &__menu {
+            margin: 0 12px;
+        }
+        .footer__logo {
+            height: 27px;
+            font-family: "Shrikhand", cursive;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .footer__menu {
+            list-style: none;
+            padding: 0;
+            margin-top: 9px;
+            li {
+                height: 20px;
+                padding: 7px 0 0 0;
+                .fa-utensils {
+                    font-size: 14px;
+                    padding-right: 10px;
+                }
+                .fa-handshake-angle {
+                    font-size: 11px;
+                    padding-right: 8px;
+                }
             }
         }
     }
