@@ -21,9 +21,15 @@
 /** General **/
 
 .body__container {
+    width: 100%;
     background-color: $background;
-    width: 375px;
     box-sizing: content-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    gap: 0;
 }
 
 
@@ -60,114 +66,105 @@
 
 /** Presentation section 1 **/
 
-* {
-    margin: 0;
-    padding: 0;
-    gap: 0;
-}
 
 .present {
     @include display-center;
     flex-direction: column;    
     .present-title {
-        height: 68px;
-        width: 275px;
+        width: 73%;
         text-align: center;
         @include index-h1h2;
-        margin-top: 39px;
+        margin: 39px 0 13px 0;
     }
     .present-text {
-        height: 46px;
-        width: 315px;
+        width: 84%;
         text-align: center;
         font-size: 18px;
         font-weight: 300;
         color: $grey;
     }
     .present__button {
-        @include button-pink;
+        @include button-anim;
         width: 218px;
-        margin: 27px 0 0 0;
-        opacity: 1;
-        transition: all 300ms ease-in-out;
-        &:hover {
-            opacity: 0.85;
-            box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.41);            
-        }
+        margin-top: 27px; 
+        margin-bottom: 50px;     
     }
 } 
 
 
 /** Fonctionnement section 2 **/
 
-.function {    
-    max-height: 440px;
-    background-color: white;
-    .function-title {
-        height: 31px;
-        @include index-h1h2;
-        padding: 48px 0 1px 0px;
-    }
-    .function-organise {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 20px;
-        padding-bottom: 43px;
-        .function-fullbutton {
+.function { 
+    background-color: white; 
+    & > div {
+        .function-title {
+            height: 31px;
+            @include index-h1h2;
+            margin: 0 0 24px 20px;
+            padding-top: 48px;
+        }
+        .function-organise {
             display: flex;
-            justify-content: center;
-            padding: 0 0 25px 12px;
-            .function-button {
-                position: relative;
-                height: 72px;
-                width: 322px;
-                border: 0;
-                border-radius: 20px;
-                background-color: #f6f6f6;
-                box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.15);
-                font-size: 16px;
-                font-weight: 500;
-                .fonction-button__texte {
-                    position: absolute;
-                    top: 27px;
-                    left: 73px;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding-bottom: 68px;
+            .function-fullbutton {
+                display: flex;
+                justify-content: center;
+                padding-left: 12px;
+                .function-button {
+                    position: relative;
+                    height: 72px;
+                    width: 322px;
+                    border: 0;
+                    border-radius: 20px;
+                    background-color: #f6f6f6;
+                    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.15);
                     font-size: 16px;
-                }    
-                .number {
-                    display: flex;
-                    position: absolute;
-                    top: 27px;
-                    left: -12px;
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 12px;
-                    background-color: $primary;
-                    font-size: 14px;
-                    color: white;
-                    span{
-                        margin: auto;
-                        text-align: center;
+                    font-weight: 500;
+                    .fonction-button__texte {
+                        position: absolute;
+                        top: 27px;
+                        left: 73px;
+                        font-size: 16px;
+                    }    
+                    .number {
+                        display: flex;
+                        position: absolute;
+                        top: 27px;
+                        left: -12px;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 12px;
+                        background-color: $primary;
+                        font-size: 14px;
+                        color: white;
+                        span{
+                            margin: auto;
+                            text-align: center;
+                        }
                     }
-                }
-                .icon1, .icon2, .icon3 {
-                    position: absolute;
-                    top: 25px;
-                    left: 36px;
-                    font-size: 18px;
-                    color: $grey4;
-                }
-                .icon3 {
-                    color: $primary;
+                    .icon1, .icon2, .icon3 {
+                        position: absolute;
+                        top: 25px;
+                        left: 36px;
+                        font-size: 18px;
+                        color: $grey4;
+                    }
+                    .icon3 {
+                        color: $primary;
+                    }
                 }
             }
         }
-    }
+    }   
 }
 
 
 /** Restaurants section 3 **/
 
-h2 {
+.restaurantTitle {
     @include index-h1h2;
     margin: 54px 0 24px 20px;
     padding-left: 3px;
@@ -176,9 +173,9 @@ h2 {
 .restaurant-allcards {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 17px;
-    gap: 18px;
+    justify-content: space-evenly;
     margin-bottom: 66px;
+    gap: 18px;
     .restaurant-card {
         position: relative;
         height: 251px;
@@ -238,6 +235,15 @@ h2 {
     }
 }
 
+/** Footer **/
+
+    footer {
+        justify-content: flex-start;
+        .footer {
+            margin-left: 12px;
+        }
+    }
+
 
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -246,10 +252,6 @@ h2 {
 /* Desktop, equal/more than 1024px) */
 
 @media (min-width: 1024px) {
-
-    .body__container {
-        width: 1440px;
-    }
 
     .header {
         box-shadow: none;
@@ -266,51 +268,56 @@ h2 {
         }
     }
 
+
     .presentation {
         display: flex;
         justify-content: center;
         .present {
             width: 645px;
-            height: 179px;
             padding: 30px 0;
             &-title {
-                height: 47px;
                 width: 645px;
                 font-size: 40px;
                 font-weight: 700;
                 text-align: center;
-                margin-top: 0px;
+                margin-top: 0;
+                padding-top: 3px;
             }
             .present-text {
-                height: 26px;
                 width: 531px;
-                margin: 28px 0;
+                margin: 20px 0 3px 0;
             }
             .present__button {
-                margin: 0;
+                margin-bottom: 0;
                 padding: 0;
             }
         }
     }    
 
- 
-
 
     .function {
-        padding: 50px 180px 7px 180px;
-        & > div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: solid 1px green;
+        & > div {            
+            width: 75%;
             padding: 0;
             margin: 0;
             .function-title {
-                padding: 0;
                 margin-top: 0;
                 margin-left: 0;
+                padding-top: 50px;
             }
             .function-organise {
                 flex-direction: row;
-                gap: 24px;
-                margin-left: 0;
-                padding-bottom: 43px;
+                justify-content: flex-start;
+                gap: 25px;
+                margin: 0;
+                padding-right: 27px;
+                padding-bottom: 50px;
                 .function-fullbutton {                    
                     padding: 0 0 1px 12px;
                 }
@@ -320,8 +327,11 @@ h2 {
     }
 
     .restaurant {
-        padding: 28px 180px 28px 180px;
+        display: flex;
+        justify-content: center;
+        padding: 30px 0px 30px 0px;
         & > div {
+            width: 75%;
             margin: 0;
             padding: 0;
             h2 {
@@ -352,49 +362,49 @@ h2 {
         }        
     }
 
-    .footer {
+
+    footer {
         display: flex;
-        flex-direction: row-reverse;
-        align-items: flex-end;
-        padding: 57px 25px 30px 25px;
-        margin: 0;
-        gap: 16px;
-        .footer__logo {
-            height: 27px;
-            width: 139px;
-            margin: 0;
-            padding: 0;
-        }
-        .footer__menu {
+        justify-content: end;
+        .footer {
+            width: 100%;
             display: flex;
-            flex-direction: row;
-            gap: 7px;
-            list-style: none;
-            padding: 0;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+            padding: 30px 0 10px 0;
             margin: 0;
-            & > li {
-                height: 20px;
-                width: 190px;
+            gap: 16px;
+            .footer__logo {
+                height: 27px;
+                width: 139px;
+                margin: 0;
                 padding: 0;
-                .fa-utensils {
-                    font-size: 14px;
-                    padding-right: 10px;
-                }
-                .fa-handshake-angle {
-                    font-size: 11px;
-                    padding-right: 8px;
-                }
             }
-            .li-width {
-                width: 130px;
+            .footer__menu {
+                display: flex;
+                flex-direction: row;
+                gap: 7px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                & > li {
+                    height: 20px;
+                    width: 190px;
+                    padding: 0;
+                    .fa-utensils {
+                        font-size: 14px;
+                        padding-right: 10px;
+                    }
+                    .fa-handshake-angle {
+                        font-size: 11px;
+                        padding-right: 8px;
+                    }
+                }
+                .li-width {
+                    width: 130px;
+                }
             }
         }
     }
 
-
 }
-
-
-
-
-

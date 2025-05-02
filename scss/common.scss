@@ -24,20 +24,20 @@ $bg-button: linear-gradient(to top, #9356DC, #FF79DA);
     }
 
 @mixin button-pink {
-        height: 50px;
-        border: 0;
-        border-radius: 25px;
-        @include text-white;
-        background: $bg-button;
-        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.25);
+    height: 50px;
+    border: 0;
+    border-radius: 25px;
+    @include text-white;
+    background: $bg-button;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.25);
     }
 @mixin button_anim {
-        @include button-pink;
-        opacity: 1;
-        transition: all 300ms ease-in-out;
-        &:hover {
-            opacity: 0.85;
-            box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.41);            
+    @include button-pink;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+    &:hover {
+        opacity: 0.85;
+        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.41);            
         }
     }
     
@@ -48,8 +48,8 @@ $bg-button: linear-gradient(to top, #9356DC, #FF79DA);
     opacity: 0;
     transition: opacity 500ms ease-in-out;
     &:hover{
-    opacity: 1;
-    }
+        opacity: 1;
+        }
 }
 
 @mixin text-overflow {
@@ -68,7 +68,7 @@ $bg-button: linear-gradient(to top, #9356DC, #FF79DA);
 body {
     display: flex;
     justify-content: center;
-  }
+}
 
 .h1-restaurant {
     font-family: "Shrikhand", cursive;
@@ -128,7 +128,6 @@ footer {
     padding: 22px 0;
     @include display-center;
     .footer {
-        width: 60%;
         min-width: 349px;
         &__logo, &__menu {
             margin: 0 12px;
