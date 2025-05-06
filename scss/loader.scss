@@ -1,0 +1,68 @@
+$loadIter: 2;
+$delay: 2s;
+
+body {
+    margin: 0;
+}
+
+.loaderBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    animation: hideLoader 1ms linear $delay both;
+    .loader {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: linear-gradient(0deg, white 50%, #99e2d0 100%);
+        animation: loadSpin 1s linear $loadIter;
+        .innerCircle {
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background-color: white;
+        }
+    }
+}
+
+@keyframes hideLoader {
+    from {
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-9999px);
+    }
+}
+
+@keyframes loadSpin {
+    from {
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/*
+.body__container {    
+    animation: showPage 1ms linear $delay reverse both;
+}
+
+
+
+@keyframes showPage {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-9999px);
+    }
+}
+    */

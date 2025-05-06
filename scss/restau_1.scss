@@ -73,13 +73,27 @@ main {
 
 /** Sections **/
 
+@keyframes opacityMenu {
+    0% {opacity: 1;}
+    100% {opacity: 0}
+}
+
 section {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 60%;
     min-width: 349px;
+    animation: opacityMenu 1s ease reverse both;
 }
+
+.dish {
+    animation-delay: 0.3s;
+}
+.dessert {
+    animation-delay: 0.6s;
+}
+
 
 .h2Block {
     display: flex;
