@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** Variables **/
 /** Mixins **/
 /** General **/
@@ -68,11 +69,12 @@ footer {
   color: White;
   padding: 22px 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
 }
 footer .footer {
   min-width: 349px;
+  margin-left: 12px;
 }
 footer .footer__logo, footer .footer__menu {
   margin: 0 12px;
@@ -276,11 +278,6 @@ section {
   padding: 24px 19px;
 }
 
-/** Footer **/
-.footer {
-  width: 60%;
-}
-
 /** transition greenCheck avec margin-right **/
 .greenCheck {
   transition: margin-right 300ms ease;
@@ -312,9 +309,15 @@ section {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.41);
 }
 
-/************************************/
-/****** Media queries ***************/
-/* Desktop, equal/more than 1024px) */
+/** Footer **/
+/* .footer {
+    width: 60%; 
+} */
+/********************************************************************/
+/* Le code ci-dessous correspond à la version responsive uniquement */
+/********************************************************************/
+/*********************** Media queries ******************************/
+/* Large devices (desktops, equal/more than 1024px) */
 /** header **/
 @media (min-width: 1024px) {
   .header {
@@ -403,4 +406,4 @@ section {
   footer .footer .footer__menu .li-width {
     width: 130px;
   }
-}/*# sourceMappingURL=restau_1.css.map */
+}/*# sourceMappingURL=restaurant.css.map */

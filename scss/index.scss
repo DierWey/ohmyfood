@@ -1,5 +1,5 @@
 @import 'common';
-/* @import 'loader'; */
+@import 'loader';
 
 
 /** Mixins **/
@@ -10,27 +10,25 @@
     color: Black;
 }
 
-@mixin button-pink {
-    height: 50px;
-    border: 0;
-    border-radius: 25px;
-    @include text-white;
-    background: $bg-button;
-    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.25);
-}
 
 /** General **/
-
-.body__container {
-    width: 100%;
-    background-color: $background;
-    box-sizing: content-box;
-}
 
 * {
     margin: 0;
     padding: 0;
     gap: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .body__container {
+        width: 100vw;
+        background-color: $background;
+        box-sizing: content-box;
+    }
 }
 
 
@@ -41,32 +39,31 @@
     flex-direction: column;
     &__logo {
         box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.15);
-        z-index: 2;
-    }
-    .header__goback{
-        display: none;
-    }
-    .header-local {
-        height: 50px;
-        @include display-center;
-        gap: 17px;
-        background-color: $grey2;
-        box-shadow: 0 4px 4px 0 rgb(0 0 0 / 0.25);
-        z-index: 1;
-        &__input {
-            height: 19px;
-            width: 109px;
-            font-size: 16px;
-            font-weight: 500;
-            background-color: $grey2;
-            border: 0;
-            padding: 0;
-        }
     }
 }
 
-/** Presentation section 1 **/
 
+/** Form **/
+
+.form {
+    height: 50px;
+    @include display-center;
+    gap: 17px;
+    background-color: $grey2;
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 0.25);
+    &__input {
+        height: 19px;
+        width: 109px;
+        font-size: 16px;
+        font-weight: 500;
+        background-color: $grey2;
+        border: 0;
+        padding: 0;
+    }
+}
+
+
+/** Presentation section 1 **/
 
 .present {
     @include display-center;
@@ -96,28 +93,33 @@
 /** Fonctionnement section 2 **/
 
 .function { 
-    background-color: white; 
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 0;
     & > div {
+        width: 355px;
         .function-title {
             height: 31px;
             @include index-h1h2;
-            margin: 0 0 24px 20px;
+            margin: 0 0 24px 0px;
             padding-top: 48px;
         }
         .function-organise {
             display: flex;
-            justify-content: space-evenly;
+            align-items: center;
             flex-wrap: wrap;
             gap: 25px;
             padding-bottom: 68px;
             .function-fullbutton {
                 display: flex;
                 justify-content: center;
-                padding-left: 12px;
+                margin-left: 12px;
                 .function-button {
                     position: relative;
                     height: 72px;
-                    width: 322px;
+                    width: 318px;
                     border: 0;
                     border-radius: 20px;
                     background-color: #f6f6f6;
@@ -165,99 +167,142 @@
 
 /** Restaurants section 3 **/
 
-.restaurantTitle {
-    @include index-h1h2;
-    margin: 54px 0 24px 20px;
-    padding-left: 3px;
-}
-
-.restaurant-allcards {
+.restaurant {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-bottom: 66px;
-    gap: 18px;
-    .restaurant-card {
-        position: relative;
-        height: 251px;
-        width: 340px;
-        border-radius: 15px;
-        background-color: white;
-        box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.10);
-        .restaurant-card-new {
-            height: 29px;
-            width: 80px;
-            border-radius: 2px;
-            background-color: $green;
-            @include display-center;
-            font-size: 14px;
-            font-weight: 500;
-            color: #008766;
-            position: absolute;
-            top: 13px;
-            right: 14px;
+    justify-content: space-around;
+    background-color: $background;
+    padding-top: 50px; 
+    padding-bottom: 66px;
+    width: 100%;
+    & > div {
+        width: 375px;
+        .restaurantTitle {
+            @include index-h1h2;
+            margin-bottom: 24px;
+            padding-left: 20px;
+            padding-right: 0;
         }
-        .image-restau {
-            width: 340px;
-            height: 174px;
-            object-fit: cover;
-            border-radius: 15px 15px 0 0;
-        }
-        #img-restau1 {
-            object-position: 50% 65%;
+        .restaurant-allcards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 18px;
+            padding-left: 20px;
+            padding-right: 0;
+            .restaurant-card {
+                position: relative;
+                height: 251px;
+                width: 340px;
+                border-radius: 15px;
+                background-color: white;
+                box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.10);
+                &-new {
+                    height: 29px;
+                    width: 80px;
+                    border-radius: 2px;
+                    background-color: $green;
+                    @include display-center;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #008766;
+                    position: absolute;
+                    top: 13px;
+                    right: 14px;
+                }
+                .image-restau {
+                    width: 340px;
+                    height: 174px;
+                    object-fit: cover;
+                    border-radius: 15px 15px 0 0;
+                }
+                #img-restau1 {
+                    object-position: 50% 65%;
+                    }
+                #img-restau2 {
+                    object-position: 50% 56%;
+                    }
+                #img-restau3 {
+                    object-position: 50% 68%;
+                    }
+                #img-restau4 {
+                    object-position: 50% 66%;
+                    }
+                .restaurant-card-title {
+                    font-size: 18px;
+                    margin: 11px 0 5px 13px;
+                }
+                .restaurant-card-text {
+                    font-size: 17px;
+                    margin-left: 13px;
+                }
+                .icon-heart, .icon-fullheart {
+                    font-size: 22px;
+                    position: absolute;
+                    top: 197px;
+                    left: 293px;
+                }
+                .icon-fullheart {
+                    @include like;
+                }
+                
             }
-        #img-restau2 {
-            object-position: 50% 56%;
-            }
-        #img-restau3 {
-            object-position: 50% 68%;
-            }
-        #img-restau4 {
-            object-position: 50% 66%;
-            }
-        .restaurant-card-title {
-            font-size: 18px;
-            margin: 11px 0 5px 13px;
         }
-        .restaurant-card-text {
-            font-size: 17px;
-            margin-left: 13px;
-        }
-        .icon-heart, .icon-fullheart {
-            font-size: 22px;
-            position: absolute;
-            top: 197px;
-            left: 293px;
-        }
-        .icon-fullheart {
-            @include like;
-        }
-        
     }
 }
 
-/** Footer **/
+
+/** Footer
 
     footer {
         justify-content: flex-start;
         .footer {
             margin-left: 12px;
         }
+    }  **/
+
+
+/********************************************************************/
+/* Le code ci-dessous correspond à la version responsive uniquement */
+/********************************************************************/
+/*********************** Media queries ******************************/
+
+/* Medium devices (tablets, equal/more than 768px) */
+
+@media (min-width: 768px) {
+
+    .function { 
+        padding-left: 0;
+        & > div {
+            width: 75vw;
+            min-width: 698px;
+            .function-organise {
+                justify-content: space-between;
+            }
+        }
     }
 
+    .restaurant > div {
+        width: 75vw;
+        min-width: 698px;
+        .restaurantTitle {
+            padding-left: 0;
+        }
+        .restaurant-allcards {
+            padding-left: 0;
+            column-gap: 0;
+        }
+    }
+
+}
 
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
-
-/****** Media queries ***********/
-/* Desktop, equal/more than 1024px) */
+/* Large devices (desktops, equal/more than 1024px) */
 
 @media (min-width: 1024px) {
 
-    /* body, .body__container, main, .function, .function > div {
-        width: 100%;
-        @include display-center;
-    } */
+    body {
+        width: 100vw;
+    }
 
     .header {
         box-shadow: none;
@@ -269,9 +314,10 @@
                 padding-top: 0;
             }
         }
-        .header-local {        
-            box-shadow: none;
-        }
+    }
+
+    .form {        
+        box-shadow: none;
     }
 
     .presentation {
@@ -302,11 +348,13 @@
 
     .function {
         @include display-center;
-        width: 100%;
+        width: 100vw;
         margin: 0;
-        padding: 0;
+        padding-left: 0;
         & > div {     
-            width: 75%;
+            width: 75vw;
+            min-width: 1010px;
+            max-width: 1080px;
             padding: 0;
             margin: 0;
             .function-title {
@@ -315,13 +363,12 @@
                 padding-top: 50px;
             }
             .function-organise {
-                display: flex;
-                gap: 25px;
+                gap: 0;
                 margin: 0;
-                padding-right: 27px;
                 padding-bottom: 50px;
+                max-width: 1053px;
                 .function-fullbutton {                    
-                    padding: 0 0 1px 12px;
+                    padding: 0 0 1px 0px;
                 }
             }
         }
@@ -330,23 +377,26 @@
 
     .restaurant {
         @include display-center;
-        padding: 30px 0px 30px 0px;
+        width: 100vw;
+        padding-top: 30px;
+        padding-bottom: 30px;
         & > div {
-            width: 75%;
+            width: 75vw;
+            min-width: 1010px;
+            max-width: 1080px;
             margin: 0;
             padding: 0;
-            h2 {
-                padding: 0;
-                margin-top: 0;
-                margin-left: 0;
+            .restaurantTitle {
+                margin: 0 0 24px 0px;
+                padding-left: 0;
             }
             .restaurant-allcards {
                 flex-direction: row;
-                justify-content: center; /*space-between;*/
+                justify-content: space-between;
                 margin-left: 0;
                 margin-bottom: 0;
                 row-gap: 50px;
-                column-gap: 100px;
+                padding-left: 0;
                 .restaurant-card {
                     width: 490px;
                     .restaurant-card-new {

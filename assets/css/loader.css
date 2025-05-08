@@ -9,7 +9,8 @@ body {
   height: 100vh;
   padding: 0;
   margin: 0;
-  position: relative;
+  opacity: 1;
+  z-index: 9999;
   animation: hideLoader 1ms linear 2s both;
 }
 .loaderBlock .loader {
@@ -28,15 +29,20 @@ body {
   border-radius: 50%;
   background-color: white;
 }
-
-@keyframes hideLoader {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-9999px);
-  }
+.loaderBlock .fontCircle {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid 3px #9356dc;
+  font-size: 25px;
+  color: #9356dc;
+  background-color: white;
+  position: absolute;
 }
+
 @keyframes loadSpin {
   from {
     transform: rotate(0);
@@ -45,19 +51,34 @@ body {
     transform: rotate(360deg);
   }
 }
-/*
-.body__container {    
-    animation: showPage 1ms linear $delay reverse both;
+@keyframes hideLoader {
+  from {
+    z-index: 9999;
+    opacity: 1;
+    height: 100vh;
+  }
+  to {
+    z-index: -1;
+    opacity: 0;
+    height: 0vh;
+  }
+}
+.body__container {
+  z-index: auto;
+  opacity: 1;
+  height: 100vh;
+  animation: showPage 1ms linear 2s both;
 }
 
-
-
-@keyframes showPage {
+/* @keyframes showPage {
     from {
-        transform: translateX(0);
+        z-index: -1;
+        opacity: 0;
+        height: 0vh;
     }
     to {
-        transform: translateX(-9999px);
+        z-index: auto;
+        opacity: 1;
+        height: 100vh;
     }
-}
-    *//*# sourceMappingURL=loader.css.map */
+} *//*# sourceMappingURL=loader.css.map */

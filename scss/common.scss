@@ -126,9 +126,12 @@ footer {
     background-color: $grey;
     @include text-white;
     padding: 22px 0;
-    @include display-center;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-start;
     .footer {
         min-width: 349px;
+        margin-left: 12px;
         &__logo, &__menu {
             margin: 0 12px;
         }
