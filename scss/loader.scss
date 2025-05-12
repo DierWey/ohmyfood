@@ -2,48 +2,48 @@ $loadIter: 2;
 $delay: 2s;
 
 body {
-    margin: 0;
-}
-
-
-.loaderBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    z-index: 9999;
-    animation: hideLoader 1ms linear $delay both;
-    .loader {
-        width: 100px;
-        height: 100px;
+    .loaderBlock {
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 50%;
-        background: linear-gradient(0deg, white 50%, #99e2d0 100%);
-        animation: loadSpin 1s linear $loadIter;
-        .innerCircle {
-            width: 80%;
-            height: 80%;
-            border-radius: 50%;
-            background-color: white;
-        }
-    }
-    .fontCircle {
-        width: 52px;
-        height: 52px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        border: solid 3px #9356dc;
-        font-size: 25px;
-        color: #9356dc;
+        height: 100vh;
+        width: 100vw;
         background-color: white;
-        position: absolute;
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        position: relative;
+        z-index: 9999;
+        animation: hideLoader 1ms linear $delay both;
+        .loader {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: linear-gradient(0deg, white 50%, #99e2d0 100%);
+            animation: loadSpin 1s linear $loadIter;
+            .innerCircle {
+                width: 80%;
+                height: 80%;
+                border-radius: 50%;
+                background-color: white;
+            }
+        }
+        .fontCircle {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: solid 3px #9356dc;
+            font-size: 25px;
+            color: #9356dc;
+            background-color: white;
+            position: absolute;
+        }
     }
 }
 
@@ -70,22 +70,16 @@ body {
 }
 
 
-.body__container {    
-    z-index: auto;
+.body__container {
     opacity: 1;
-    height: 100vh;
-    animation: showPage 1ms linear $delay both;
+    animation: showPage 1ms linear $delay reverse both;
 }
 
-/* @keyframes showPage {
+@keyframes showPage {
     from {
-        z-index: -1;
-        opacity: 0;
-        height: 0vh;
+        opacity: 1;
     }
     to {
-        z-index: auto;
-        opacity: 1;
-        height: 100vh;
+        opacity: 0;
     }
-} */
+}

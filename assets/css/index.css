@@ -103,22 +103,21 @@ footer .footer .footer__menu li .fa-handshake-angle {
   padding-right: 8px;
 }
 
-body {
-  margin: 0;
-}
-
-.loaderBlock {
+body .loaderBlock {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
+  background-color: white;
   padding: 0;
   margin: 0;
   opacity: 1;
+  position: relative;
   z-index: 9999;
   animation: hideLoader 1ms linear 2s both;
 }
-.loaderBlock .loader {
+body .loaderBlock .loader {
   width: 100px;
   height: 100px;
   display: flex;
@@ -128,13 +127,13 @@ body {
   background: linear-gradient(0deg, white 50%, #99e2d0 100%);
   animation: loadSpin 1s linear 2;
 }
-.loaderBlock .loader .innerCircle {
+body .loaderBlock .loader .innerCircle {
   width: 80%;
   height: 80%;
   border-radius: 50%;
   background-color: white;
 }
-.loaderBlock .fontCircle {
+body .loaderBlock .fontCircle {
   width: 52px;
   height: 52px;
   display: flex;
@@ -169,24 +168,18 @@ body {
   }
 }
 .body__container {
-  z-index: auto;
   opacity: 1;
-  height: 100vh;
-  animation: showPage 1ms linear 2s both;
+  animation: showPage 1ms linear 2s reverse both;
 }
 
-/* @keyframes showPage {
-    from {
-        z-index: -1;
-        opacity: 0;
-        height: 0vh;
-    }
-    to {
-        z-index: auto;
-        opacity: 1;
-        height: 100vh;
-    }
-} */
+@keyframes showPage {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /** Mixins **/
 /** General **/
 * {
@@ -453,14 +446,6 @@ body .body__container {
   opacity: 1;
 }
 
-/** Footer
-
-    footer {
-        justify-content: flex-start;
-        .footer {
-            margin-left: 12px;
-        }
-    }  **/
 /********************************************************************/
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /********************************************************************/
