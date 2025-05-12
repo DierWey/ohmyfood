@@ -77,6 +77,12 @@ main {
     0% {opacity: 1;}
     100% {opacity: 0}
 }
+.dish {
+    animation-delay: 0.3s;
+}
+.dessert {
+    animation-delay: 0.6s;
+}
 
 section {
     display: flex;
@@ -85,88 +91,76 @@ section {
     width: 60%;
     min-width: 349px;
     animation: opacityMenu 1s ease reverse both;
-}
-
-.dish {
-    animation-delay: 0.3s;
-}
-.dessert {
-    animation-delay: 0.6s;
-}
-
-
-.h2Block {
-    display: flex;
-    flex-direction: column;
-    h2 {
-        font-size: 16px;
-        font-weight: 300;
-        height: 24px;
-        text-transform: uppercase;
-    }
-    .traitVert {
-        width: 40px;
-        height: 3px;
-        background-color: $green;
-    }
-}
-
-.card {
-    height: 69px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.1);
-    display: flex;
-    gap: 10px;
-    overflow: hidden;
-    .cardInfos {
-        height: 60px;
-        width: 100%;
+    .h2Block {
         display: flex;
         flex-direction: column;
-        flex: 1;
-        min-width: 0;
-        margin-left: 15px;
-        gap: 1px;
-        h3, .comment {
-            @include text-overflow;
-            height: 20px;
-            padding-top: 10px;
-        }
-        h3 {
-            font-size: 18px;
-            font-weight: 500;            
-        }
-        .comment {
-            font-size: 15px;
+        h2 {
+            font-size: 16px;
             font-weight: 300;
+            height: 24px;
+            text-transform: uppercase;
         }
-    }  
+        .traitVert {
+            width: 40px;
+            height: 3px;
+            background-color: $green;
+        }
+    }
+    .card {
+        height: 69px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px 0 rgb(0 0 0 / 0.1);
+        display: flex;
+        gap: 10px;
+        overflow: hidden;
+        .cardInfos {
+            height: 60px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+            margin-left: 15px;
+            gap: 1px;
+            h3, .comment {
+                @include text-overflow;
+                height: 20px;
+                padding-top: 10px;
+            }
+            h3 {
+                font-size: 18px;
+                font-weight: 500;            
+            }
+            .comment {
+                font-size: 15px;
+                font-weight: 300;
+            }
+        }
+        .price {
+            width: 27px;
+            height: 18px;
+            font-size: 15px;
+            font-weight: 700;
+            margin: 37px 1px 0 3px;
+        }
+        .greenCheck {
+            width: 59px;
+            height: 69px;
+            border-radius: 0 15px 15px 0;
+            background-color: $green;
+            transition: margin-right 300ms ease;
+            & > i {
+                font-size: 20px;
+                color: white;
+                padding: 24px 19px;
+            }
+            margin-right: -59px;
+        }  
+    }
 }
 
-.price {
-    width: 27px;
-    height: 18px;
-    font-size: 15px;
-    font-weight: 700;
-    margin: 37px 1px 0 3px;
-}
-.greenCheck {
-    width: 59px;
-    height: 69px;
-    border-radius: 0 15px 15px 0;
-    background-color: $green;
-    & > i {
-        font-size: 20px;
-        color: white;
-        padding: 24px 19px;
-    }
-    margin-right: -59px;
-}
 
 /** transition greenCheck avec margin-right **/
-.greenCheck {
-    transition: margin-right 300ms ease;
-}
 .card:hover {    
     .greenCheck {
         margin-right: 0;
@@ -184,12 +178,6 @@ margin-bottom: 40px;
 }
 
 
-/** Footer **/
-
-/* .footer {
-    width: 60%; 
-} */
-
 
 /********************************************************************/
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -198,10 +186,10 @@ margin-bottom: 40px;
 
 /* Large devices (desktops, equal/more than 1024px) */
 
-    /** header **/
-
 @media (min-width: 1024px) {
 
+    /** header **/
+    
     .header {
         box-shadow: none;
         &__goback {
@@ -227,28 +215,24 @@ margin-bottom: 40px;
     .mainBlock {
         margin-top: 0px;
         .mainBg {
-            max-width: 1055px;            
+            max-width: 73%;           
             padding-top: 0px;
+            .h1Block {
+                position: relative;
+                width: 307px;
+                height: 31px;
+                margin-bottom: 0px;
+                & > h1 {
+                    top: -9px;
+                    left: 0px;
+                }
+                .icon-heart, .icon-fullheart {
+                    top: 0px;
+                    right: 0px;
+                }
+            }
         }
     }
-
-    .h1Block {
-        position: relative;
-        width: 307px;
-        height: 31px;
-
-        margin-bottom: 0px;
-
-        & > h1 {
-            top: -9px;
-            left: 0px;
-        }
-        .icon-heart, .icon-fullheart {
-            top: 0px;
-            right: 0px;
-        }
-    }
-
 
     /* footer */
 

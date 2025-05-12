@@ -190,15 +190,6 @@ main .mainBlock .mainBg {
     opacity: 0;
   }
 }
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 60%;
-  min-width: 349px;
-  animation: opacityMenu 1s ease reverse both;
-}
-
 .dish {
   animation-delay: 0.3s;
 }
@@ -207,23 +198,30 @@ section {
   animation-delay: 0.6s;
 }
 
-.h2Block {
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 60%;
+  min-width: 349px;
+  animation: opacityMenu 1s ease reverse both;
+}
+section .h2Block {
   display: flex;
   flex-direction: column;
 }
-.h2Block h2 {
+section .h2Block h2 {
   font-size: 16px;
   font-weight: 300;
   height: 24px;
   text-transform: uppercase;
 }
-.h2Block .traitVert {
+section .h2Block .traitVert {
   width: 40px;
   height: 3px;
   background-color: #99e2d0;
 }
-
-.card {
+section .card {
   height: 69px;
   border-radius: 15px;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
@@ -231,7 +229,7 @@ section {
   gap: 10px;
   overflow: hidden;
 }
-.card .cardInfos {
+section .card .cardInfos {
   height: 60px;
   width: 100%;
   display: flex;
@@ -241,48 +239,43 @@ section {
   margin-left: 15px;
   gap: 1px;
 }
-.card .cardInfos h3, .card .cardInfos .comment {
+section .card .cardInfos h3, section .card .cardInfos .comment {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   height: 20px;
   padding-top: 10px;
 }
-.card .cardInfos h3 {
+section .card .cardInfos h3 {
   font-size: 18px;
   font-weight: 500;
 }
-.card .cardInfos .comment {
+section .card .cardInfos .comment {
   font-size: 15px;
   font-weight: 300;
 }
-
-.price {
+section .card .price {
   width: 27px;
   height: 18px;
   font-size: 15px;
   font-weight: 700;
   margin: 37px 1px 0 3px;
 }
-
-.greenCheck {
+section .card .greenCheck {
   width: 59px;
   height: 69px;
   border-radius: 0 15px 15px 0;
   background-color: #99e2d0;
+  transition: margin-right 300ms ease;
   margin-right: -59px;
 }
-.greenCheck > i {
+section .card .greenCheck > i {
   font-size: 20px;
   color: white;
   padding: 24px 19px;
 }
 
 /** transition greenCheck avec margin-right **/
-.greenCheck {
-  transition: margin-right 300ms ease;
-}
-
 .card:hover .greenCheck {
   margin-right: 0;
 }
@@ -309,17 +302,13 @@ section {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.41);
 }
 
-/** Footer **/
-/* .footer {
-    width: 60%; 
-} */
 /********************************************************************/
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /********************************************************************/
 /*********************** Media queries ******************************/
 /* Large devices (desktops, equal/more than 1024px) */
-/** header **/
 @media (min-width: 1024px) {
+  /** header **/
   .header {
     box-shadow: none;
   }
@@ -345,20 +334,20 @@ section {
     margin-top: 0px;
   }
   .mainBlock .mainBg {
-    max-width: 1055px;
+    max-width: 73%;
     padding-top: 0px;
   }
-  .h1Block {
+  .mainBlock .mainBg .h1Block {
     position: relative;
     width: 307px;
     height: 31px;
     margin-bottom: 0px;
   }
-  .h1Block > h1 {
+  .mainBlock .mainBg .h1Block > h1 {
     top: -9px;
     left: 0px;
   }
-  .h1Block .icon-heart, .h1Block .icon-fullheart {
+  .mainBlock .mainBg .h1Block .icon-heart, .mainBlock .mainBg .h1Block .icon-fullheart {
     top: 0px;
     right: 0px;
   }
